@@ -50,8 +50,8 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   },
 
   refreshAuthToken: async () => {
-    const { refreshToken, accessToken } = get();
-    if (!refreshToken || !accessToken) return;
+    const { refreshToken } = get();
+    if (!refreshToken) return;
 
     try {
       const response = await client.mutate({
@@ -67,9 +67,13 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     }
   },
 
+  setAccessToken: (token: string) => {
+    set({ accessToken: token });
+  },
+
   logout: () => {
-    set({ accessToken: null, refreshToken: null }),
-      localStorage.removeItem('accessToken');
+    set({ accessToken: null, refreshToken: null });
+    localStorage.removeItem('accessToken');
   }
 
 

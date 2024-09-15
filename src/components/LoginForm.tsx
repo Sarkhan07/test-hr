@@ -38,27 +38,27 @@ export function LoginForm() {
   return (
     <Card className="w-full max-w-sm">
       <CardHeader>
-        <CardTitle className="text-2xl">Вход</CardTitle>
+        <CardTitle className="text-2xl">Login</CardTitle>
         <CardDescription>
-          Введите ваш email ниже для входа в вашу учетную запись.
+          Enter your email below to login to your account.
         </CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">
         <div className="grid gap-2">
-          <Label htmlFor="email">Электронная почта</Label>
+          <Label htmlFor="email">Email</Label>
           <Input id="email" type="email" value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="m@example.com" required />
         </div>
         <div className="grid gap-2">
-          <Label htmlFor="password">Пароль</Label>
+          <Label htmlFor="password">Password</Label>
           <Input id="password" type="password" value={password}
             onChange={(e) => setPassword(e.target.value)}
             required />
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full" type="submit" onClick={handleSubmit}>Войти</Button>
+        <Button className="w-full" type="submit" onClick={handleSubmit}>Login</Button>
       </CardFooter>
     </Card>
   )

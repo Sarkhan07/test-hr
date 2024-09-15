@@ -5,7 +5,7 @@ import history from '../public/images/history.svg';
 
 const ProfileCard: React.FC = () => {
   return (
-    <div className="container mx-auto px-4 py-6" style={{ width: '1047px', height: '970px', borderRadius: '16px 0 0 0', gap: '0px' }}>
+    <div className="container mx-auto px-4 py-6 bg-white" style={{ width: '1047px', height: '970px', borderRadius: '16px 0 0 0', gap: '0px' }}>
       <div className="flex justify-between items-center mb-4">
         <div className="flex items-center">
           <Image src={history} alt="icon" width={16} height={16} />

@@ -12,18 +12,16 @@ export default function MainPage() {
 
   useEffect(() => {
     const token = localStorage.getItem('accessToken');
-    if (!accessToken) {
 
-      router.push("/login");
-    }
     if (token && !accessToken) {
       setAccessToken(token);
     }
 
-    if (token) {
+    if (accessToken || token) {
       refreshAuthToken();
+    } else {
+      router.push("/login");
     }
-
   }, [accessToken, router, refreshAuthToken, setAccessToken]);
 
   return <div><ProfilePage /></div>;
