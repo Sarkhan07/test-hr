@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { FaCog, FaChevronDown } from 'react-icons/fa';
+import { FaChevronDown } from 'react-icons/fa';
 import config from '@/public/images/config.svg'
 
 interface ProfileHeader {
@@ -25,17 +25,17 @@ const ProfileHeader: React.FC<ProfileHeader> = ({ userName, userAvatar }) => {
   return (
     <div className="bg-[#DAE6F2] h-[200px] flex flex-col justify-center px-8 py-4">
       <div className="flex items-center">
-        <div className="w-[150px] h-[150px] rounded-full overflow-hidden">
+        <div className="w-[150px] h-[150px] rounded-full  z-10 ml-12 mr-20">
           <Image
             src={userAvatar}
             alt="Profile Picture"
             width={150}
             height={150}
-            className="object-cover rounded-full"
+            className="object-cover rounded-full "
           />
         </div>
 
-        <div className="ml-8 flex-1">
+        <div className="ml-22 flex-1">
           <h1 className="font-inter text-[28px] ml-3 font-semibold leading-[33.89px] text-black">
             {userName}
           </h1>
@@ -55,7 +55,7 @@ const ProfileHeader: React.FC<ProfileHeader> = ({ userName, userAvatar }) => {
             </div>
 
           </div>
-          <div className="flex items-center space-x-2 mt-5 ">
+          <div className="flex items-center space-x-4 mt-5 ">
             {tabs.map((tab, index) => (
               <a
                 key={index}

@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { MY_PROFILE_QUERY } from '@/app/graphql/queries';

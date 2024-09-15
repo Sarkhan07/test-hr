@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import history from '../public/images/history.svg';
 
+
 const ProfileCard: React.FC = () => {
   return (
     <div className="container mx-auto px-4 py-6" style={{ width: '1047px', height: '970px', borderRadius: '16px 0 0 0', gap: '0px' }}>
