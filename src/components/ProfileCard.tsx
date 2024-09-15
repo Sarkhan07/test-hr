@@ -1,80 +1,190 @@
 import React from 'react';
 import Image from 'next/image';
 import history from '../public/images/history.svg';
-
+import plus from '../public/images/plus.svg';
+import mountain from '../public/images/montain.svg';
+import bigHis from '../public/images/bigHis.svg';
+import pig from '../public/images/PIG.svg';
+import clock from '../public/images/clock.svg';
+import hismon from '../public/images/hisMon.svg';
+import cross from '../public/images/cross.svg';
+import deleteIcon from '../public/images/delete.svg';
 
 const ProfileCard: React.FC = () => {
+  const timeOffData = [
+    { type: 'Sick', days: '3', available: 'Days Available', img: plus },
+    { type: 'Annual Leave', days: '10.3', available: 'Hours Used (YTD)', img: mountain },
+    { type: 'Comp/In Lieu Time', days: '0', available: 'Hours Used (YTD)', img: bigHis }
+  ];
   return (
-    <div className="container mx-auto px-4 py-6 bg-white" style={{ width: '1047px', height: '970px', borderRadius: '16px 0 0 0', gap: '0px' }}>
-      <div className="flex justify-between items-center mb-4">
+    <div className="w-[1047px] min-h-[970px]  gap-0 rounded-tl-[16px] bg-[#FCFCFE] py-8 px-6">
+
+      <div className="flex justify-between items-start mb-4 mr-16">
         <div className="flex items-center">
           <Image src={history} alt="icon" width={16} height={16} />
-          <span className="text-sm font-medium" style={{ fontFamily: 'Inter', fontSize: '14px', lineHeight: '16.94px' }}>
-            Accrual Level Start Date 03/09-2020
-          </span>
+          <div className="font-inter text-[20px] font-medium leading-[24.2px] text-left text-[#204973] ml-1 ">
+            Time Off
+          </div>
         </div>
-        <button className="border border-black px-4 py-1 rounded-md" style={{ width: '149px', height: '33px' }}>
-          Add Time Off Policy
-        </button>
-      </div>
 
-      <div className="border-b-2 border-gray-300 mb-6"></div>
+        <div className='flex items-center'>
+          <span className="font-inter text-[14px] font-medium leading-[24.2px] text-black ">
+            Accrual Level Start Date
+            <span className="text-[#3758AB] font-medium text-[14px] ml-1" >
+              03.09.2020
+            </span>
+          </span>
 
-      <div className="grid grid-cols-3 gap-12 mb-6" style={{ gap: '48px' }}>
-        {['Sick', 'Annual Leave', 'Comp/In Lieu Time'].map((type, idx) => (
-          <div key={idx} className="border border-gray-300 rounded-lg p-4" style={{ width: '264px', height: '138px' }}>
-            <div className="flex items-center mb-2">
-              <Image src="/icon.svg" alt="icon" width={16} height={16} />
-              <h3 className="ml-2 text-xl font-semibold">{type}</h3>
+          <button className="min-w-[149px] h-[33px] gap-[10px] rounded-tl-[8px] border-2 border-black ml-5">
+            <div className="font-inter text-[14px] font-medium leading-[24.2px] text-center text-[#204973] ml-1">
+              Add Time Off Policy
             </div>
-            <p className="text-3xl font-bold" style={{ fontSize: '30px', fontWeight: 600, lineHeight: '36.31px' }}>
-              {type === 'Sick' ? '3' : type === 'Annual Leave' ? '10.3' : '0'}
-            </p>
-            <p className="text-sm">{type === 'Sick' ? 'Days Available' : 'Hours Used (YTD)'}</p>
-            {type === 'Sick' && <p className="text-sm">1 day scheduled</p>}
+          </button>
+
+        </div>
+
+
+
+      </div>
+
+      <div className="border-b-2 border-gray-300 mb-6"></div>
+
+
+      <div className="grid grid-cols-3 gap-10 mb-6" >
+        {timeOffData.map((item, idx) => (
+          <div key={idx} className="border border-gray-300 rounded-lg p-4 bg-[#F0F3F8] min-w-[264 px] min-h-[138 px] flex flex-col items-center">
+
+            <h3 className="ml-2 text-xl font-semibold text-black">{item.type}</h3>
+            <div className="flex flex-row items-center mb-2">
+              <Image src={item.img} alt={item.type} width={30} height={30} />
+              <p className="text-3xl font-bold text-black text-[30px]">
+                {item.days}
+              </p>
+            </div>
+
+            <p className="text-sm text-black">{item.available}</p>
+            {item.type === 'Sick' && <p className="text-sm">1 day scheduled</p>}
           </div>
         ))}
       </div>
 
-      <div className="grid grid-cols-3 gap-12 mb-6" style={{ gap: '48px' }}>
+      <div className="grid grid-cols-3 gap-12 mb-6">
         {['Sick Full-Time', 'Holiday Full-Time', 'Comp/in Lieu Time Flexible Policy'].map((text, idx) => (
-          <div key={idx} className="flex items-center mb-2">
-            <p className="text-sm font-medium" style={{ fontFamily: 'Inter', fontSize: '14px', fontWeight: 500 }}>{text}</p>
+          <div key={idx} className="flex items-center justify-center mb-2 text-black">
+            <p className="font-inter text-[14px] text-sm font-medium">{text}</p>
           </div>
         ))}
       </div>
 
       <div className="border-b-2 border-gray-300 mb-6"></div>
 
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex justify-between items-start mb-4 mr-16">
         <div className="flex items-center">
-          {/* <img src="/icon.svg" alt="icon" className="mr-2" style={{ width: '16px' }} /> */}
-          <span className="text-sm font-medium" style={{ fontFamily: 'Inter', fontSize: '14px', lineHeight: '16.94px' }}>
+          <Image src={clock} alt="icon" width={16} height={16} />
+          <div className="font-inter text-[14px] font-medium leading-[24.2px] text-left text-[#204973] ml-2 ">
+            Upcoming Time Off
+          </div>
+        </div>
+
+      </div>
+
+      <div className="border-b-2 border-gray-300 mb-6"></div>
+
+      <div className="flex justify-between items-start mb-4 mr-16">
+        <div className="flex items-center">
+          <Image src={plus} alt="icon" width={30} height={30} />
+          <div className='flex flex-col'>
+
+            <div className="font-inter text-[14px] font-medium leading-[24.2px] text-left text-black ml-2 ">
+              Jan 27
+            </div>
+
+            <div className="flex items-center">
+              <div className="w-2 h-2 bg-black rounded-full mr-1 ml-2"></div>
+              <div className="font-inter text-[14px] font-medium leading-[24.2px] text-left text-black ml-1">
+                1 day of Sick
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div className="border-b-2 border-gray-300 mb-6"></div>
+
+      <div className="flex justify-between items-start mb-4 mr-16">
+        <div className="flex items-center">
+          <Image src={pig} alt="icon" width={30} height={30} />
+          <div className='flex flex-col'>
+
+            <div className="font-inter text-[14px] font-medium leading-[24.2px] text-left text-black ml-2 ">
+              Jul 4
+            </div>
+
+            <div className="flex items-center">
+              <div className="font-inter text-[14px] font-medium leading-[24.2px] text-left text-black ml-2">
+                Independence Day
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div className="flex flex-col justify-between items-start mb-6">
+        <div className="flex items-start">
+          <Image src={hismon} alt="icon" width={16} height={16} />
+          <span className="text-sm font-medium font-inter text-[14px] text-[#204973] ml-2">
             History
           </span>
         </div>
-        <input
-          type="text"
-          placeholder="Search"
-          className="border border-black rounded-md p-2 mr-4"
-          style={{ width: '256px', height: '33px' }}
-        />
-        <button className="border border-black px-4 py-1 rounded-md" style={{ width: '96px', height: '33px' }}>
-          ALL
-        </button>
-        <button className="border border-black px-4 py-1 rounded-md" style={{ width: '176px', height: '33px' }}>
-          Balance History
-        </button>
+
+        <div className='flex justify-between w-full items-center'>
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Search"
+              className="border border-[#7C96B1] rounded-md p-2 mr-4 w-[256px] h-[33px] pr-8 text-black" />
+            <div className="absolute right-[17px] top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
+              <Image src={deleteIcon} alt="Clear" width={16} height={16} />
+              <Image src={cross} alt="Arrow Down" width={21} height={21} />
+            </div>
+          </div>
+          <div className="relative">
+            <button className="border border-[#7C96B1] px-4 py-1 rounded-md w-[96px] h-[33px] text-black">
+              ALL
+            </button>
+            <div className="absolute right-[2px] top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
+
+              <Image src={cross} alt="Arrow Down" width={21} height={21} />
+            </div>
+          </div>
+
+          <div className="relative">
+
+            <button className="border border-[#7C96B1] px-4 py-1 rounded-md  w-[176px] h-[33px] ml-auto text-black">
+              Balance History
+            </button>
+            <div className="absolute right-[2px] top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
+
+              <Image src={cross} alt="Arrow Down" width={21} height={21} />
+            </div>
+          </div>
+
+        </div>
+
       </div>
 
 
       <div className="border-b-2 border-gray-300 mb-6"></div>
 
 
-      <div className="overflow-auto" style={{ width: '1015px', height: '49px' }}>
-        <table className="w-full text-left">
+      <div className="overflow-auto min-w-[1015px] min-h-[49px]" >
+        <table className="w-full text-left text-black text-sm">
           <thead>
-            <tr className="border-b-2 border-gray-300">
+            <tr className="border-b-2 border-gray-300 bg-[#DAE6F2] ">
               <th>Date</th>
               <th className="pl-20">Description</th>
               <th className="pl-80">Used Days (-)</th>
@@ -86,7 +196,12 @@ const ProfileCard: React.FC = () => {
           <tbody>
             {[
               { date: '23/05/2024', desc: 'Accrual for May', used: '-3', earned: '3', expiration: 'N/A', balance: '3' },
+              { date: '23/06/2024', desc: 'Accrual for June', used: '', earned: '3', expiration: 'N/A', balance: '4' },
+              { date: '23/06/2024', desc: 'Accrual for June', used: '-2', earned: '', expiration: 'N/A', balance: '4' },
+              { date: '23/06/2024', desc: 'Accrual for June', used: '', earned: '', expiration: 'N/A', balance: '4' },
+              { date: '23/06/2024', desc: 'Accrual for June', used: '-2', earned: '3', expiration: 'N/A', balance: '4' },
               { date: '23/06/2024', desc: 'Accrual for June', used: '-2', earned: '3', expiration: 'N/A', balance: '4' }
+
             ].map((row, index) => (
               <tr key={index} className="border-b-2 border-gray-200">
                 <td>{row.date}</td>

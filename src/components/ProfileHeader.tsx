@@ -23,7 +23,7 @@ const ProfileHeader: React.FC<ProfileHeader> = ({ userName, userAvatar }) => {
   ];
 
   return (
-    <div className="bg-[#DAE6F2] h-[200px] flex flex-col justify-center px-8 py-4">
+    <div className="bg-[#DAE6F2] h-[200px] flex flex-col justify-center px-8 pt-[4.4rem] pb-2">
       <div className="flex items-center">
         <div className="w-[150px] h-[150px] rounded-full  z-10 ml-12 mr-20">
           <Image

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
-import { FaBell, FaQuestionCircle, FaCog, FaSearch } from 'react-icons/fa'; // Importing icons
+import { FaSearch, FaBars, FaTimes } from 'react-icons/fa';
 import config from '../public/images/config.svg';
 import question from '../public/images/question.svg';
 import bell from '../public/images/bell.svg';
@@ -12,6 +12,12 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ userName, userAvatar }) => {
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className="bg-white shadow-sm border-b border-gray-200">
       <div className="container mx-auto px-4 pt-3 pb-[-0.25rem] flex justify-between items-center">
@@ -21,8 +27,15 @@ const Header: React.FC<HeaderProps> = ({ userName, userAvatar }) => {
             <div className="font-inter text-black text-[20px] font-semibold leading-[24.2px] text-left">HarmonyHR</div>
           </div>
 
+          <button
+            className="md:hidden text-black text-2xl"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
 
-          <nav className="flex items-center space-x-6">
+          <nav className="hidden md:flex  items-center space-x-6">
             <a href="#" className="text-black hover:text-gray-800">Home</a>
             <a
               href="#"
@@ -70,7 +83,6 @@ const Header: React.FC<HeaderProps> = ({ userName, userAvatar }) => {
 
           />
 
-
           <Image
             src={userAvatar}
             alt={`${userName}'s avatar`}
@@ -80,6 +92,18 @@ const Header: React.FC<HeaderProps> = ({ userName, userAvatar }) => {
           />
         </div>
       </div>
+
+
+      {isMenuOpen && (
+        <nav className="md:hidden bg-white shadow-md border-t border-gray-200 mt-2 p-4">
+          <a href="#" className="block text-black py-2 hover:text-gray-800">Home</a>
+          <a href="#" className="block text-black py-2 hover:text-gray-800">My Info</a>
+          <a href="#" className="block text-black py-2 hover:text-gray-800">People</a>
+          <a href="#" className="block text-black py-2 hover:text-gray-800">Hiring</a>
+          <a href="#" className="block text-black py-2 hover:text-gray-800">Reports</a>
+          <a href="#" className="block text-black py-2 hover:text-gray-800">Files</a>
+        </nav>
+      )}
     </header >
   );
 };

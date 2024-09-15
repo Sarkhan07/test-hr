@@ -14,7 +14,7 @@ import personal from '@/public/images/profil.svg'
 
 const ProfileSidebar: React.FC = () => {
   return (
-    <div className="w-[225px] min-h-[664px] z-0 flex flex-col gap-4 mt-[-2.9rem] ml-10">
+    <div className="w-[225px] min-h-[664px] z-0 flex flex-col gap-4 mt-[-1.5rem] ml-10 mr-5">
 
       <div
 
