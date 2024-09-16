@@ -14,13 +14,11 @@ import personal from '@/public/images/profil.svg'
 
 const ProfileSidebar: React.FC = () => {
   return (
-    <div className="w-[225px] min-h-[664px] z-0 flex flex-col gap-4 mt-[-1.5rem] ml-10 mr-5">
 
-      <div
-
-        className="w-[225px] min-h-[130px] bg-white p-6 rounded-tl-[16px] flex flex-col items-start justify-center"
-      >
-        <div className='flex items-center justify-start'>
+<div className="hidden lg:flex lg:flex-col lg:w-56 lg:min-h-[664px] lg:gap-4 lg:mt-[-1.5rem] lg:ml-10 lg:mr-5">
+    
+        <div className="bg-white p-6 rounded-tl-lg flex flex-col gap-4">
+        <div className='flex items-center '>
           <Image
             src={phone}
             alt='phone'
@@ -70,7 +68,7 @@ const ProfileSidebar: React.FC = () => {
 
       <div
 
-        className="w-[225px] min-h-[130px] bg-white p-6 rounded-tl-[16px] flex flex-col items-start justify-center"
+        className=" bg-white p-6 rounded-tl-[16px] flex flex-col items-start justify-center"
       >
 
 

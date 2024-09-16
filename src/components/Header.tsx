@@ -19,27 +19,27 @@ const Header: React.FC<HeaderProps> = ({ userName, userAvatar }) => {
   };
 
   return (
-    <header className="bg-white shadow-sm border-b border-gray-200">
-      <div className="container mx-auto px-4 pt-3 pb-[-0.25rem] flex justify-between items-center">
+    <header className="bg-white shadow-sm border-b border-gray-200 w-full">
+      <div className="container mx-auto px-4 pt-3 flex justify-between items-center py-3">
 
-        <div className="flex items-center space-x-10">
-          <div className="mr-8">
-            <div className="font-inter text-black text-[20px] font-semibold leading-[24.2px] text-left">HarmonyHR</div>
-          </div>
+        <div className="flex items-center space-x-4 lg:space-x-10">
+       
+            <div className="font-inter text-black text-lg font-semibold mr-8">HarmonyHR</div>
+         
 
           <button
-            className="md:hidden text-black text-2xl"
+            className="text-black text-2xl md:hidden"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
 
-          <nav className="hidden md:flex  items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
             <a href="#" className="text-black hover:text-gray-800">Home</a>
             <a
               href="#"
-              className="w-[96px] h-[54px] p-[16px_0_0_0] gap-[10px] rounded-t-[8px] bg-[#DAE6F2] font-inter text-[18px] font-normal  text-white text-center">
+              className="w-[96px] h-[54px] p-[16px_0_0_0] gap-[10px] rounded-t-md  bg-[#DAE6F2] font-inter text-[18px] font-normal  text-white text-center">
               My Info
             </a>
             <a href="#" className="text-black hover:text-gray-800">People</a>
@@ -51,8 +51,8 @@ const Header: React.FC<HeaderProps> = ({ userName, userAvatar }) => {
 
 
 
-        <div className="flex items-center w-1/3">
-          <div className="relative w-full max-w-[300px] ml-14">
+        <div className="hidden sm:flex items-center w-full max-w-md ml-4 mr-1">
+          <div className="relative w-full">
             <input
               type="text"
               placeholder="Search"
@@ -64,29 +64,29 @@ const Header: React.FC<HeaderProps> = ({ userName, userAvatar }) => {
 
 
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-3 sm:space-x-4">
           <Image
             src={config}
             alt='config'
-            className="rounded-full cursor-pointer  w-5 h-9"
+            className="cursor-pointer  w-5 h-9"
           />
           <Image
             src={question}
             alt='question'
-            className="rounded-full cursor-pointer w-5 h-5"
+            className="cursor-pointer w-5 h-5"
 
           />
           <Image
             src={bell}
             alt='bell'
-            className="rounded-full cursor-pointer w-5 h-5"
+            className="cursor-pointer w-5 h-5"
 
           />
 
           <Image
             src={userAvatar}
             alt={`${userName}'s avatar`}
-            className="rounded-full"
+           className="w-9 h-9 rounded-full cursor-pointer"
             width={38}
             height={38}
           />
