@@ -1,3 +1,24 @@
+# Тестовый проект
+
+Этот проект предназначен для демонстрации возможностей использования Next.js, TypeScript, shadcn/ui, Apollo GraphQL и Zustand для реализации логики входа в систему.
+
+## Технологии
+
+- **Next.js**:
+- **TypeScript**:
+- **shadcn/ui**:
+- **Apollo GraphQL**:
+- **Zustand**:
+
+## Доступ к проекту
+
+Для доступа к приложению используйте следующие учетные данные:
+
+- **Электронная почта**: john@mail.com
+- **Пароль**: changeme
+
+Посетите [тестовый сайт](https://test-hr.vercel.app) для демонстрации работы проекта.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
